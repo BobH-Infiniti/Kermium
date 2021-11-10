@@ -1,7 +1,7 @@
 # [Insert some cool mod name here] 
 ## Introduction
 This mod is a tModLoader mod made by BobH and Eerie.
-This mod will be available in 2 versions. BobH will develop the 1.3 version while Eerie develops the 1.4 one.
+This mod will be available on tMod 1.4
 
 ## Content
 Currently it has nothing, but we will eventually add some content into it.
