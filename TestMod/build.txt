@@ -1,3 +1,0 @@
-displayName = Test Mod
-author = BobH
-version = 0.1
