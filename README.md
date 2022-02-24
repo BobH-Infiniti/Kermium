@@ -7,7 +7,7 @@ Currently it adds a quite some weapons and a couple of accesories. It will have 
 
 ## Credits
 Coders : Eerie
-</br>
+
 Spriters : BobH, WaterBottle
 
 
