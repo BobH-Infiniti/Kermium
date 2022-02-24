@@ -7,10 +7,12 @@ This mod will be available on tModLoader 1.4
 Currently it adds a quite some weapons and a couple of accesories. It will have a lot more content later on (hopefully).
 
 ### Credits
-Coder : - Eerie
+Coders : 
+- Eerie
 
-Spriter : - BobH
-          - WaterBottle
+Spriters : 
+- BobH
+- WaterBottle
 
 
 
