@@ -1,0 +1,3 @@
+displayName = Kermium Mod
+author = Eerie, BobH and Water Bottle
+version = 0.1

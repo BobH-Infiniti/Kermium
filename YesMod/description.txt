@@ -1,0 +1,1 @@
+Enchanted Mushroom lacks a sprite and some items are not obtainable (mainly the BoB upgrades).
