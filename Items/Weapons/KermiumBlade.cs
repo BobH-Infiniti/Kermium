@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.GameContent.Creative;
 
 namespace YesMod.Items.Weapons
 {
@@ -12,6 +13,7 @@ namespace YesMod.Items.Weapons
 			Tooltip.SetDefault("'Its potential is frightening'" +
                 "\nShoots piercing blades that inflict 'Kermium Affliction'." +
                 "\nHitting an enemy with the blade inflicts 'Poisoned'.");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
 		public override void SetDefaults() 
@@ -23,13 +25,14 @@ namespace YesMod.Items.Weapons
 			Item.useTime = 40;
 			Item.useAnimation = 20;
 			Item.useStyle = 1;
-			Item.knockBack = 4;
+			Item.knockBack = 0.3f;
 			Item.value = 10000;
 			Item.rare = 2;
-			Item.shoot = ModContent.ProjectileType<Projectiles.JungleThornArrow>();
+			Item.shoot = ModContent.ProjectileType<Projectiles.KermiumSword>();
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
 			Item.shootSpeed = 10f;
+			Item.scale = 1.4f;
 
 		}
 
@@ -38,7 +41,7 @@ namespace YesMod.Items.Weapons
 		{
 
 
-			target.AddBuff(ModContent.BuffType<Buffs.KermiumAffliction>(), 500);
+			
 			target.AddBuff(BuffID.Poisoned, 360);
 				
 			
@@ -49,9 +52,7 @@ namespace YesMod.Items.Weapons
 		public override void AddRecipes() 
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.MeteoriteBar, 15);
-			recipe.AddIngredient(ItemID.Emerald, 5);
-			recipe.AddIngredient(ItemID.Amethyst, 3);
+			recipe.AddIngredient(ModContent.ItemType<Items.KermiumBar>(), 15);
 			recipe.AddTile(TileID.Anvils);
 			recipe.Register();
 		}

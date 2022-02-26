@@ -19,7 +19,7 @@ namespace YesMod.Items.Weapons
 			Item.DamageType = DamageClass.Melee;
 			Item.width = 50;
 			Item.height = 50;
-			Item.useTime = 40;
+			Item.useTime = 10;
 			Item.useAnimation = 20;
 			Item.useStyle = 1;
 			Item.pick = 110;
@@ -34,24 +34,14 @@ namespace YesMod.Items.Weapons
 		}
 
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
-		{
-			
-			
-
-				target.AddBuff(BuffID.Poisoned, 360);
-				
-			
-		}
+		
 
 
 
 		public override void AddRecipes() 
 		{
 			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ItemID.MeteoriteBar, 15);
-			recipe.AddIngredient(ItemID.Emerald, 5);
-			recipe.AddIngredient(ItemID.Amethyst, 3);
+			recipe.AddIngredient(ModContent.ItemType<Items.KermiumBar>(), 12);
 			recipe.AddTile(TileID.Anvils);
 			recipe.Register();
 		}
