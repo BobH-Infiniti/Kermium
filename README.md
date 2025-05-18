@@ -7,10 +7,9 @@ https://discord.gg/bWnAsFFtxJ
 
 ### Credits
 #### Kermium Team
-Code  : Eerie
+Code  : Eerie<br/>
 Sprite: BobH
-
-### Contributors
+#### Contributors
 WaterBottle
 
 
