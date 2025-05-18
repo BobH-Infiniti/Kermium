@@ -6,8 +6,12 @@ Join the discord for development updates!
 https://discord.gg/bWnAsFFtxJ
 
 ### Credits
-
 #### Kermium Team
+Code  : Eerie
+Sprite: BobH
+
+### Contributors
+WaterBottle
 
 
 
