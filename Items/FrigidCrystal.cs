@@ -3,14 +3,14 @@ using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace YesMod.Items
+namespace KermiumMod.Items
 {
     public class FrigidCrystal : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Frigid Crystal");
-            Tooltip.SetDefault("Cold and fragile");
+            // DisplayName.SetDefault("Frigid Crystal");
+            // Tooltip.SetDefault("Cold and fragile");
         }
 
         public override void SetDefaults()

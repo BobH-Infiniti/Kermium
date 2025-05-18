@@ -8,14 +8,14 @@ using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
     public class KermiumStaff : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Kermium Staff");
-            Tooltip.SetDefault("'Something powerful rests inside this fragile shell, are you worthy of awakening it?'");
+            // DisplayName.SetDefault("Kermium Staff");
+            // Tooltip.SetDefault("'Something powerful rests inside this fragile shell, are you worthy of awakening it?'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
             Item.staff[Item.type] = true;
         }
@@ -26,7 +26,7 @@ namespace YesMod.Items.Weapons
         {
             Item.width = 50;
             Item.height = 50;
-            Item.damage = 24;
+            Item.damage = 23;
             Item.maxStack = 1; //how much fit in one inventory slot
             Item.value = 2500;
             Item.rare = ItemRarityID.Orange;
@@ -45,7 +45,7 @@ namespace YesMod.Items.Weapons
             Item.expert = false;
         }
 
-        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
 
             const int NumProjectiles = 2; // The humber of projectiles that this gun will shoot.

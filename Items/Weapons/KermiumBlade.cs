@@ -3,16 +3,16 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.GameContent.Creative;
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
 	public class KermiumBlade : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
 			
-			Tooltip.SetDefault("'Its potential is frightening'" +
+			/* Tooltip.SetDefault("'Its potential is frightening'" +
                 "\nShoots piercing blades that inflict 'Kermium Affliction'." +
-                "\nHitting an enemy with the blade inflicts 'Poisoned'.");
+                "\nHitting an enemy with the blade inflicts 'Poisoned'."); */
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
@@ -37,7 +37,7 @@ namespace YesMod.Items.Weapons
 		}
 
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 
 

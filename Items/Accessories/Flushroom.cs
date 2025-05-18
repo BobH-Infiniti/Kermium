@@ -6,11 +6,11 @@ using Terraria.GameContent;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using YesMod;
+using KermiumMod;
 using static Terraria.Player;
 using Terraria.GameContent.Creative;
 
-namespace YesMod.Items.Accessories   
+namespace KermiumMod.Items.Accessories   
 {
     
     public class Flushroom : ModItem
@@ -25,10 +25,10 @@ namespace YesMod.Items.Accessories
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Enchanted Mushroom");
-            Tooltip.SetDefault("You occasionally shoot a mushroom spore." +
+            // DisplayName.SetDefault("Enchanted Mushroom");
+            /* Tooltip.SetDefault("You occasionally shoot a mushroom spore." +
                 "\nIncreases critical strike chance by 4%." +
-                "\nIt emits a certain hypnotic beauty.");
+                "\nIt emits a certain hypnotic beauty."); */
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
@@ -41,7 +41,7 @@ namespace YesMod.Items.Accessories
             Item.width = 24;   
             Item.height = 28;   
             Item.value = 100000; 
-            Item.rare = 4;                
+            Item.rare = ModContent.RarityType<Rarities.Imperfect>();                
             Item.accessory = true; 
             
            
@@ -52,7 +52,7 @@ namespace YesMod.Items.Accessories
 
         public override void UpdateAccessory(Player player,bool hideVisual) 
         {
-            var source = player.GetProjectileSource_Accessory(this.Item);
+            var source = player.GetSource_Accessory(this.Item);
 
             if (FlushroomTimer > 0)
             {

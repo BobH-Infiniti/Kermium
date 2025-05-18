@@ -7,15 +7,15 @@ using Terraria.GameContent.Creative;
 using Microsoft.Xna.Framework;
 
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
 	public class BloodcoreCleaver : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
 			
-			Tooltip.SetDefault("'Spill their blood'" +
-                 "\nCritical hits cause healing projectiles to spawn.");
+			/* Tooltip.SetDefault("'Spill their blood'" +
+                 "\nCritical hits cause healing projectiles to spawn."); */
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
 
@@ -30,7 +30,7 @@ namespace YesMod.Items.Weapons
 			Item.useStyle = 1;
 			Item.knockBack = 0.3f;
 			Item.value = 10000;
-			Item.shoot = 928;
+			Item.shoot = 0;
 			Item.rare = 5;
 			Item.UseSound = SoundID.Item1;
 			Item.autoReuse = true;
@@ -40,11 +40,11 @@ namespace YesMod.Items.Weapons
 		}
 
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 
 
-			if (crit && target.type != 488)
+			if (hit.Crit && target.type != 488)
 			{
 				int logicCheckScreenHeight = Main.LogicCheckScreenHeight;
 				int logicCheckScreenWidth = Main.LogicCheckScreenWidth;
@@ -61,12 +61,12 @@ namespace YesMod.Items.Weapons
 				num5 = 8f / num5;
 				num3 *= num5;
 				num4 *= num5;
-				Projectile.NewProjectile(player.GetProjectileSource_Item(this.Item), num, num2, num3, num4, ModContent.ProjectileType<Projectiles.BloodcoreBolt>(), damage + 1, knockBack, player.whoAmI);
-				Projectile.NewProjectile(player.GetProjectileSource_Item(this.Item), num -1f, num2 - 3f, num3 + 1f, num4 + 3f, ModContent.ProjectileType<Projectiles.BloodcoreBolt>(), damage + 1, knockBack, player.whoAmI);
+				Projectile.NewProjectile(player.GetSource_ItemUse(this.Item), num, num2, num3, num4, ModContent.ProjectileType<Projectiles.BloodcoreBolt>(), damageDone + 1, hit.Knockback, player.whoAmI);
+				Projectile.NewProjectile(player.GetSource_ItemUse(this.Item), num -1f, num2 - 3f, num3 + 1f, num4 + 3f, ModContent.ProjectileType<Projectiles.BloodcoreBolt>(), damageDone + 1, hit.Knockback, player.whoAmI);
 
 
 				
-				Projectile.NewProjectile(player.GetProjectileSource_Item(this.Item), Main.MouseWorld, vector, ModContent.ProjectileType<Projectiles.BloodcoreBolt>(), damage + 1, knockBack, player.whoAmI);
+				Projectile.NewProjectile(player.GetSource_ItemUse(this.Item), Main.MouseWorld, vector, ModContent.ProjectileType<Projectiles.BloodcoreBolt>(), damageDone + 1, hit.Knockback, player.whoAmI);
 
 			}
 		}
@@ -75,21 +75,8 @@ namespace YesMod.Items.Weapons
 
 
 
-		public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
-		{
+		
 
-
-
-			return false;
-			
-		}
-
-		public override void AddRecipes() 
-		{
-			Recipe recipe = CreateRecipe();
-			recipe.AddIngredient(ModContent.ItemType<Items.KermiumBar>(), 15);
-			recipe.AddTile(TileID.Anvils);
-			recipe.Register();
-		}
+		
 	}
 }

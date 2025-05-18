@@ -6,14 +6,14 @@ using Terraria.ModLoader;
 using static Terraria.Projectile;
 
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
     public class BloodyScepter : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Bloody Scepter");
-            Tooltip.SetDefault("'Perforating the layers of reality'");
+            // DisplayName.SetDefault("Bloody Scepter");
+            // Tooltip.SetDefault("'Perforating the layers of reality'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
             Item.staff[Item.type] = true;
         }

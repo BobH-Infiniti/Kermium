@@ -2,15 +2,15 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
 	public class AstralCleaver : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
 			// DisplayName.SetDefault("AstralCleaver"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("'It came from outer space'" +
-                "\nCritical strikes set enemies on fire and grant the player 5 seconds of Lava Immunity.");
+			/* Tooltip.SetDefault("'It came from outer space'" +
+                "\nCritical strikes set enemies on fire and grant the player 5 seconds of Lava Immunity."); */
 		}
 
 		public override void SetDefaults() 
@@ -31,9 +31,9 @@ namespace YesMod.Items.Weapons
 		}
 
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit)
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
 		{
-			if (crit)
+			if (hit.Crit)
 			{
 
 				target.AddBuff(BuffID.OnFire, 360);

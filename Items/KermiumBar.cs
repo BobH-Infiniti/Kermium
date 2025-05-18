@@ -3,14 +3,14 @@ using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace YesMod.Items
+namespace KermiumMod.Items
 {
     public class KermiumBar : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Kermium Bar");
-            Tooltip.SetDefault("'It pulses with a fraction of a higher beings power'");
+            // DisplayName.SetDefault("Kermium Bar");
+            // Tooltip.SetDefault("'It pulses with a fraction of a higher beings power'");
         }
 
         public override void SetDefaults()

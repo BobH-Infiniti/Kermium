@@ -2,14 +2,13 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
 	public class KermiumPickaxe : ModItem
 	{
 		public override void SetStaticDefaults() 
 		{
-			// DisplayName.SetDefault("AstralCleaver"); // By default, capitalization in classnames will add spaces to the display name. You can customize the display name here by uncommenting this line.
-			Tooltip.SetDefault("'These are usually only found in ancient ruins'");
+			
                
 		}
 

@@ -7,14 +7,14 @@ using Terraria.ModLoader;
 using static Terraria.Projectile;
 
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
     public class DivineScepter : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Divine Scepter");
-            Tooltip.SetDefault("[c/ffd700:'Never lose hope']");
+            // DisplayName.SetDefault("Divine Scepter");
+            // Tooltip.SetDefault("[c/ffd700:'Never lose hope']");
             
             Item.staff[Item.type] = true;
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

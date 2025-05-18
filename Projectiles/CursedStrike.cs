@@ -5,17 +5,17 @@ using Terraria;
 
 using Terraria.ID;
 using Terraria.ModLoader;
-using YesMod;
+using KermiumMod;
 
 
-namespace YesMod.Projectiles
+namespace KermiumMod.Projectiles
 {
     public class CursedStrike : ModProjectile
     {
        
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Strike");
+            // DisplayName.SetDefault("Cursed Strike");
 
 
 
@@ -37,22 +37,12 @@ namespace YesMod.Projectiles
             Projectile.localNPCHitCooldown = 10;
             
         }
-        public override void AI()
-        {
-            //red | green| blue
-           
-        }
        
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) //When you hit an NPC
+        
+       
+        public override void OnKill(int timeLeft)
         {
-
-           
-
-        }
-        //After the projectile is dead
-        public override void Kill(int timeLeft)
-        {
-            // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
+            
             Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
           
         }

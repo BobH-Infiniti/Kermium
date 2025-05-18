@@ -5,17 +5,17 @@ using Terraria;
 
 using Terraria.ID;
 using Terraria.ModLoader;
-using YesMod;
+using KermiumMod;
 
 
-namespace YesMod.Projectiles
+namespace KermiumMod.Projectiles
 {
     public class KermiumSword : ModProjectile
     {
        
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Kermium Blade");
+            // DisplayName.SetDefault("Kermium Blade");
 
 
 
@@ -37,28 +37,17 @@ namespace YesMod.Projectiles
             Projectile.usesLocalNPCImmunity = true;
             Projectile.localNPCHitCooldown = 10;
         }
-        public override void AI()
+      
+        
+        public override void OnKill(int timeLeft)
         {
-            //red | green| blue
-           
-        }
-       
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) //When you hit an NPC
-        {
-
-           
-
-        }
-        //After the projectile is dead
-        public override void Kill(int timeLeft)
-        {
-            // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
+            
             Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
           
         }
 
 
-        public override void ModifyHitNPC(NPC target, ref int damage, ref float knockback, ref bool crit, ref int hitDirection)
+        public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
 
             target.AddBuff(ModContent.BuffType<Buffs.KermiumAffliction>(), 300);

@@ -1,17 +1,17 @@
-using YesMod.Projectiles;
+using KermiumMod.Projectiles;
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace YesMod.Items.Ammo
+namespace KermiumMod.Items.Ammo
 {
     public class Dirtball : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Dirtball");
-            Tooltip.SetDefault("Who thought this would be a good idea?");
+            // DisplayName.SetDefault("Dirtball");
+            // Tooltip.SetDefault("Who thought this would be a good idea?");
         }
 
         public override void SetDefaults()

@@ -7,17 +7,17 @@ using Terraria.GameContent;
 using Terraria.ID;
 using Terraria.DataStructures;
 using Terraria.ModLoader;
-using YesMod;
+using KermiumMod;
 
 
-namespace YesMod.Projectiles
+namespace KermiumMod.Projectiles
 {
     public class DamnedRemnant : ModProjectile
     {
        
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Damned Remnant");
+            // DisplayName.SetDefault("Damned Remnant");
 
 
 
@@ -42,9 +42,13 @@ namespace YesMod.Projectiles
         }
         public override void AI()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 10; i++)
             {
-                Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 62, Projectile.velocity.X * 0.5f, Projectile.velocity.Y * 0.5f);
+                int num249 = Dust.NewDust(new Vector2(Projectile.position.X, Projectile.position.Y), Projectile.width, Projectile.height, 62, Projectile.velocity.X, Projectile.velocity.Y, 50, default(Color), 1.2f);
+                Main.dust[num249].noGravity = true;
+                Dust dust2 = Main.dust[num249];
+                dust2.velocity *= 0.3f;
+
             }
 
             float maxDetectRadius = 300f; // The maximum radius at which a projectile can detect a target
@@ -96,17 +100,10 @@ namespace YesMod.Projectiles
         }
 
 
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) //When you hit an NPC
+       
+        public override void OnKill(int timeLeft)
         {
-
            
-           
-
-        }
-        //After the projectile is dead
-        public override void Kill(int timeLeft)
-        {
-            // This code and the similar code above in OnTileCollide spawn dust from the tiles collided with. SoundID.Item10 is the bounce sound you hear.
             Collision.HitTiles(Projectile.position + Projectile.velocity, Projectile.velocity, Projectile.width, Projectile.height);
           
         }

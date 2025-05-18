@@ -1,21 +1,22 @@
 using Terraria;
 using Microsoft.Xna.Framework;
 using Terraria.ID;
+using Terraria.GameContent;
 using Terraria.DataStructures;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using static Terraria.Projectile;
 
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
     public class WandOfTheDamned : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Wand of the Damned");
-            Tooltip.SetDefault("'Curse thee'" +
-                "\nShoots multiple homing bolts.");
+            // DisplayName.SetDefault("Wand of the Damned");
+            /* Tooltip.SetDefault("'Curse thee'" +
+                "\nShoots multiple homing bolts."); */
             
             Item.staff[Item.type] = true;
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -23,8 +24,8 @@ namespace YesMod.Items.Weapons
      
         public override void SetDefaults()
         {
-            Item.width = 40;
-            Item.height = 40;
+            Item.width = 34;
+            Item.height = 34;
             Item.damage = 18;
             Item.maxStack = 1; //how much fit in one inventory slot
             Item.value = 2500;
@@ -44,22 +45,19 @@ namespace YesMod.Items.Weapons
             Item.expert = false;
         }
 
-        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            const int NumProjectiles = 3; // The humber of projectiles that this gun will shoot.
-
-            for (int i = 0; i < NumProjectiles; i++)
+            float numberProjectiles = 3 + Main.rand.Next(1); // 3, 4, or 5 shots
+            float rotation = MathHelper.ToRadians(45);
+            position += Vector2.Normalize(velocity) * 45f;
+            for (int i = 0; i < numberProjectiles; i++)
             {
-                // Rotate the velocity randomly by 30 degrees at max.
-                Vector2 newVelocity = velocity.RotatedByRandom(MathHelper.ToRadians(15));
-
-              
-                // Create a projectile.
-                Projectile.NewProjectileDirect(source, position, newVelocity, type, damage, knockback, player.whoAmI);
+                Vector2 perturbedSpeed = velocity.RotatedBy(MathHelper.Lerp(-rotation, rotation, i / (numberProjectiles - 1))) * .2f; // Watch out for dividing by 0 if there is only 1 projectile.
+                Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
             }
-
-            return false; // Return false because we don't want tModLoader to shoot projectile
+            return false; // return false to stop vanilla from calling Projectile.NewProjectile.
         }
+
 
         public override void AddRecipes()
         {
@@ -67,7 +65,7 @@ namespace YesMod.Items.Weapons
             recipe.AddIngredient(ModContent.ItemType<Items.Weapons.NecroticWand>(), 1);
             recipe.AddIngredient(ModContent.ItemType<Items.Weapons.KermiumStaff>(), 1);
             recipe.AddIngredient(ModContent.ItemType<Items.Weapons.CursedScepter>(), 1);
-            recipe.AddIngredient(ModContent.ItemType<Items.Weapons.JunglesFury>(), 1);
+            recipe.AddIngredient(ItemID.ThunderStaff, 1);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
 
@@ -75,7 +73,7 @@ namespace YesMod.Items.Weapons
             recipe2.AddIngredient(ModContent.ItemType<Items.Weapons.NecroticWand>(), 1);
             recipe2.AddIngredient(ModContent.ItemType<Items.Weapons.KermiumStaff>(), 1);
             recipe2.AddIngredient(ModContent.ItemType<Items.Weapons.BloodyScepter>(), 1);
-            recipe2.AddIngredient(ModContent.ItemType<Items.Weapons.JunglesFury>(), 1);
+            recipe2.AddIngredient(ItemID.ThunderStaff, 1);
             recipe2.AddTile(TileID.Anvils);
             recipe2.Register();
 

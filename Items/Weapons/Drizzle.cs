@@ -3,10 +3,10 @@ using Microsoft.Xna.Framework;
 using Terraria.ID;
 using System;
 using Terraria.ModLoader;
-using YesMod.Items;
+using KermiumMod.Items;
 using static Terraria.ModLoader.ModContent;
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
 	public class Drizzle : ModItem
 	
@@ -15,16 +15,16 @@ namespace YesMod.Items.Weapons
 		
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Drizzle"); 
-			Tooltip.SetDefault("The bow itself deals damage and inflicts frostburn on critical strikes." +
+			// DisplayName.SetDefault("Drizzle"); 
+			/* Tooltip.SetDefault("The bow itself deals damage and inflicts frostburn on critical strikes." +
                 "\nShoots in 3 arrow bursts." +
                 "\nUnusually high velocity." +
-                "\n'A drizzle is the harbringer of the rainstorm'");
+                "\n'A drizzle is the harbinger of the rainstorm'"); */
 		}
 
 		public override void SetDefaults() 
 		{
-			Item.damage = 19;
+			Item.damage = 13;
 			Item.DamageType = DamageClass.Ranged;
 			Item.width = 22;
 			Item.height = 36;
@@ -49,20 +49,17 @@ namespace YesMod.Items.Weapons
 
 		
 
-		public override void OnHitNPC(Player player, NPC target, int damage, float knockBack, bool crit) 
+		public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone) 
 		{
 
 			
-			if (crit)
+			if (hit.Crit)
 			{
 				target.AddBuff(BuffID.Frostburn, 360);
 			}
              
 
-			if (damage <= 20)
-            {
-				target.AddBuff(BuffID.ThornWhipNPCDebuff, 360);
-			}
+			
 		}
 
 

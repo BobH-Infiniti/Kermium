@@ -7,14 +7,14 @@ using Terraria.ModLoader;
 using static Terraria.Projectile;
 
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
     public class CursedScepter : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Cursed Scepter");
-            Tooltip.SetDefault("'Burn them to the ground'");
+            // DisplayName.SetDefault("Cursed Scepter");
+            // Tooltip.SetDefault("'Burn them to the ground'");
             
             Item.staff[Item.type] = true;
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -24,26 +24,26 @@ namespace YesMod.Items.Weapons
         {
             Item.width = 50;
             Item.height = 50;
-            Item.damage = 15;
+            Item.damage = 12;
             Item.maxStack = 1; //how much fit in one inventory slot
             Item.value = 2500;
-            Item.rare = ItemRarityID.Blue;
+            Item.rare = ItemRarityID.Orange;
             Item.DamageType = DamageClass.Magic;
             Item.Size = new Vector2(28, 36);
             Item.mana = 10;
-            Item.useTime = 14;
-            Item.useAnimation = 14;
+            Item.useTime = 16;
+            Item.useAnimation = 16;
             Item.useStyle = 5;
             Item.knockBack = 2;
             Item.UseSound = SoundID.Item21;
             Item.noMelee = true;
             Item.shoot = ModContent.ProjectileType<Projectiles.CursedStrike>();
-            Item.shootSpeed = 13f;
+            Item.shootSpeed = 12f;
             Item.autoReuse = true;
             Item.expert = false;
         }
 
-        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             const int NumProjectiles = 3; // The humber of projectiles that this gun will shoot.
 

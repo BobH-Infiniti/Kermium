@@ -7,14 +7,14 @@ using Terraria.ModLoader;
 using static Terraria.Projectile;
 
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
     public class NecroticWand : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Necrotic Wand");
-            Tooltip.SetDefault("'Rattle me bones'");
+            // DisplayName.SetDefault("Necrotic Wand");
+            // Tooltip.SetDefault("'Rattle me bones'");
             
             Item.staff[Item.type] = true;
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -43,7 +43,7 @@ namespace YesMod.Items.Weapons
             Item.expert = false;
         }
 
-        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             const int NumProjectiles = 3; // The humber of projectiles that this gun will shoot.
 

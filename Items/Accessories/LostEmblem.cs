@@ -5,7 +5,7 @@ using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 
-namespace YesMod.Items.Accessories    //We need this to basically indicate the folder where it is to be read from, so you the texture will load correctly
+namespace KermiumMod.Items.Accessories    //We need this to basically indicate the folder where it is to be read from, so you the texture will load correctly
 {
     
     public class LostEmblem : ModItem
@@ -13,8 +13,8 @@ namespace YesMod.Items.Accessories    //We need this to basically indicate the f
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Lost Emblem");
-            Tooltip.SetDefault("Grants minor increases to a multitude stats.");
+            // DisplayName.SetDefault("Lost Emblem");
+            // Tooltip.SetDefault("Grants minor increases to a multitude stats.");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
     
@@ -35,7 +35,7 @@ namespace YesMod.Items.Accessories    //We need this to basically indicate the f
         {
 
             player.GetDamage(DamageClass.Generic) += 0.05f;
-            player.armorPenetration += 5;
+            player.GetArmorPenetration(DamageClass.Generic) += 5;
             player.lifeRegen += 1;
             player.jumpSpeedBoost += 0.20f;
             player.statDefense += 2;

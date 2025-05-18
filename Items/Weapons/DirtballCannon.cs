@@ -3,10 +3,10 @@ using Microsoft.Xna.Framework;
 using Terraria.ID;
 using System;
 using Terraria.ModLoader;
-using YesMod.Items;
+using KermiumMod.Items;
 using static Terraria.ModLoader.ModContent;
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
 	public class DirtballCannon : ModItem
 	
@@ -15,9 +15,9 @@ namespace YesMod.Items.Weapons
 		
 		public override void SetStaticDefaults() 
 		{
-			DisplayName.SetDefault("Dirtball Cannon");
-			Tooltip.SetDefault("Some weird guy thought it was a good idea to insert dirt into a snowball cannon, ...and it was" +
-				"\nUses Dirtballs as ammo.");
+			// DisplayName.SetDefault("Dirtball Cannon");
+			/* Tooltip.SetDefault("Some weird guy thought it was a good idea to insert dirt into a snowball cannon" +
+				"\nUses Dirtballs as ammo."); */
                
 		}
 

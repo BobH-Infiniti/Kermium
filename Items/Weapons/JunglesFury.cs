@@ -7,14 +7,14 @@ using Terraria.ModLoader;
 using static Terraria.Projectile;
 
 
-namespace YesMod.Items.Weapons
+namespace KermiumMod.Items.Weapons
 {
     public class JunglesFury : ModItem
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Jungle's Fury");
-            Tooltip.SetDefault("'Burn them to the ground'");
+            // DisplayName.SetDefault("Jungle's Fury");
+            // Tooltip.SetDefault("'Burn them to the ground'");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
      
@@ -22,7 +22,7 @@ namespace YesMod.Items.Weapons
         {
             Item.width = 32;
             Item.height = 36;
-            Item.damage = 16;
+            Item.damage = 13;
             Item.maxStack = 1; //how much fit in one inventory slot
             Item.value = 2500;
             Item.rare = ItemRarityID.Green;
@@ -40,7 +40,7 @@ namespace YesMod.Items.Weapons
             Item.expert = false;
         }
 
-        public override bool Shoot(Player player, ProjectileSource_Item_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
+        public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             const int NumProjectiles = 1; // The humber of projectiles that this gun will shoot.
 

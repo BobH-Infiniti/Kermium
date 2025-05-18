@@ -6,18 +6,18 @@ using Terraria.GameContent;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using YesMod;
+using KermiumMod;
 using static Terraria.Player;
 
 
-namespace YesMod.Projectiles
+namespace KermiumMod.Projectiles
 {
     public class BelowZero : ModProjectile
     {
        
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Below Zerowo");
+            // DisplayName.SetDefault("Below Zerowo");
 
 
 
@@ -45,7 +45,7 @@ namespace YesMod.Projectiles
         {
             Player player = Main.player[Projectile.owner];
 
-            var source = Projectile.GetProjectileSource_FromThis();
+            var source = Projectile.GetSource_FromThis();
             if (Projectile.localAI[0] == 0f && Main.myPlayer == Projectile.owner)
             {
                 Projectile.localAI[0] = 1f;
@@ -57,13 +57,13 @@ namespace YesMod.Projectiles
             
         }
        
-        public override void OnHitNPC(NPC target, int damage, float knockback, bool crit) //When you hit an NPC
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone) 
         {
             target.AddBuff(BuffID.Frostburn, 360);
 
 
         }
-        //After the projectile is dead
+       
        
 
 
