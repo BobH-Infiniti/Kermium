@@ -1,3 +1,5 @@
-This is a heavy w.i.p..
-Tarot Cards are currently undergoing various heavy reworks that are yet to be finished.
-Not actually in a releasable state rn lol.
+Kermium Mod is a mod that adds quite some weapons and accessories. 
+It is still in early stages so expect many work in progress stuff.
+
+Kermium Mod Discord for development updates:
+https://discord.gg/bWnAsFFtxJ
