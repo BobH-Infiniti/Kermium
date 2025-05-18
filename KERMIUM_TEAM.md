@@ -1,5 +1,5 @@
 Kermium Team is the legal entity holding ownership of the Kermium Mod software. 
-Current members are: Eerie and BobH
+Current members are: [Eerie](https://github.com/KermitBootleg) and [BobH](https://github.com/BobH-Infiniti)
 
 Members can be added or removed only through unanimous vote. If a member is uncontactable for 2 weeks, they are considered to abstain from voting.
 
