@@ -1,14 +1,8 @@
 # Kermium Mod
-## Introduction
-This mod is a tModLoader mod made by BobH and Eerie. This mod will be available on the Terraria 1.4 version of tModLoader. Currently, the v0.1 Alpha can be downloaded and played from the releases. 
 
-## Content
-Currently it adds a quite some weapons and a couple of accesories. It will have a lot more content later on (hopefully).
+Kermium Mod is a Terraria Mod made by Kermium Team. This mod is still heavily in progress so there is not that much content in it. Currently, it adds some weapons and accessories.
 
-## Credits
-Coders : Eerie
-</br>
-Spriters : BobH, WaterBottle
+
 
 
 
